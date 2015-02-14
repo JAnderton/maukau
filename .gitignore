@@ -25,3 +25,8 @@ node_modules
 dist
 .tmp
 app/bower_components
+
+# Deployment files
+.deploy-host.json
+.ftppass
+.sftpCache.json

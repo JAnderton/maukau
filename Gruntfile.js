@@ -260,6 +260,18 @@ module.exports = function (grunt) {
         'svgmin',
         'htmlmin'
       ]
+    },
+    'sftp-deploy': {
+      build: {
+        auth: grunt.file.readJSON('.deploy-host.json'),
+        cache: '.sftpCache.json',
+        src: 'dist',
+        dest: '/home/www-data/www/mansi.weds.karun.japhet.in',
+        exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp'],
+        serverSep: '/',
+        concurrency: 4,
+        progress: true
+      }
     }
   });
 
@@ -310,4 +322,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-sftp-deploy');
 };

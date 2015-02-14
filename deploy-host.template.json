@@ -1,0 +1,5 @@
+{
+  "host": "server.com",
+  "port": 22,
+  "authKey": "key1"
+}
