@@ -1,16 +1,173 @@
+/***************************
+*         Imports          *
+***************************/
 @import "../bower_components/bootstrap/less/bootstrap.less";
+
 @icon-font-path: "../fonts/glyphicons/";
 
 @import "../bower_components/font-awesome/less/font-awesome.less";
 @fa-font-path: "../fonts/font-awesome";
 
-.browsehappy {
-  margin: 0.2em 0; 
-  background: #ccc; 
-  color: #000; 
-  padding: 0.2em 0; 
+/***************************
+*        Main.less         *
+***************************/
+@page-width: 100%;
+@page-height: 100%;
+@app-text-color: #ffffff;
+@page-background-color: #333;
+@top-padding: 20px;
+// 1%?
+@nav-link-font-size: 16px;
+
+.Box-Shadow(@blur-distance, @left-offset: 0px, @right-offset: 0px, @shadow-color: rgba(0,0,0,0.5)) {
+  -webkit-box-shadow: inset @left-offset @right-offset @blur-distance @shadow-color;
+  box-shadow: inset @left-offset @right-offset @blur-distance @shadow-color;
 }
 
-.jumbotron {
-  margin: 50px auto 0 auto;
+.Property-Color(@color: @app-text-color, @alpha: 1, @property: color) {
+  @{property}: @color; /* IE8 proofing */
+  @{property}: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+}
+
+/***************************
+*          Styles          *
+***************************/
+// Body styling
+html {
+  height: @page-height;
+  background-color: @page-background-color;
+}
+
+body {
+  height: inherit;
+  background-color: inherit;
+  color: @app-text-color;
+  text-align: center;
+  @flipped-text-color: contrast(@app-text-color);
+  text-shadow: 0 1px 2px hsla(hue(@flipped-text-color), saturation(@flipped-text-color), lightness(@flipped-text-color), .5);
+}
+
+// Wrappers
+.site-wrapper {
+  display: table;
+  width: @page-width;
+  height: @page-height;
+  min-height: @page-height;
+  .Box-Shadow(100px);
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+
+  @media (min-width: 768px) {
+    vertical-align: middle;
+  }
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: @page-width;
+  }
+
+  @media (min-width: 992px) {
+    width: @page-width - 10%;
+  }
+}
+
+/* Padding for spacing */
+.pad-top {
+  padding-top: @top-padding;
+}
+
+/*
+ * Header
+ */
+.masthead {
+  @media (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    width: @page-width;
+  }
+
+  @media (min-width: 992px) {
+    width: @page-width - 10%;
+  }
+}
+
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    float: left;
+  }
+}
+
+.masthead-nav {
+  & > li {
+    display: inline-block;
+  }
+
+  & > li + li {
+    margin-left: 20px;
+  }
+
+  & > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: @nav-link-font-size;
+    font-weight: bold;
+    .Property-Color(@app-text-color, .75);
+    border-bottom: 2px solid transparent;
+  }
+
+  & > li > a:hover,
+  & > li > a:focus {
+    background-color: transparent;
+    .Property-Color(@app-text-color, 0.25, border-bottom-color);
+  }
+
+  & > .active > a,
+  & > .active > a:hover,
+  & > .active > a:focus {
+    color: @app-text-color;
+    border-bottom-color: @app-text-color;
+  }
+
+  @media (min-width: 768px) {
+    float: right;
+  }
+}
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 20px;
+
+  .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+  .Property-Color(@app-text-color, 0.5);
+
+  @media (min-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    width: @page-width;
+  }
+
+  @media (min-width: 992px) {
+    width: @page-width - 10%;
+  }
 }
