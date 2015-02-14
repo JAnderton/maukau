@@ -27,6 +27,6 @@ dist
 app/bower_components
 
 # Deployment files
-.deploy-host.json
+.deploy-config.json
 .ftppass
 .sftpCache.json

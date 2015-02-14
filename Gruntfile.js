@@ -19,6 +19,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  var deployConfig = grunt.file.readJSON('.deploy-config.json');
+
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
@@ -263,10 +265,10 @@ module.exports = function (grunt) {
     },
     'sftp-deploy': {
       build: {
-        auth: grunt.file.readJSON('.deploy-host.json'),
+        auth: deployConfig.auth,
         cache: '.sftpCache.json',
-        src: 'dist',
-        dest: '/home/www-data/www/mansi.weds.karun.japhet.in',
+        src: yeomanConfig.dist,
+        dest: deployConfig.dest,
         exclusions: ['dist/**/.DS_Store', 'dist/**/Thumbs.db', 'dist/tmp'],
         serverSep: '/',
         concurrency: 4,
