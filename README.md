@@ -9,8 +9,8 @@ While I'm at it, why not
 * use bootstrap and other frameworks/utils for coolness?
 * create a grunt config to auto-build and deploy?
 * use Less instead of writing CSS?
-* minify all HTML, CSS and JS
-* compress all images during deployment
+* minify all HTML, CSS and JS?
+* compress all images during deployment?
 
 So I ended up doing all of that which is why this project is quite (unnecessarily) bigger than it probably should be.
 
