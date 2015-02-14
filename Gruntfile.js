@@ -325,5 +325,10 @@ module.exports = function (grunt) {
     'build'
   ]);
 
+  grunt.registerTask('deploy', [
+    'build',
+    'sftp-deploy'
+  ]);
+
   grunt.loadNpmTasks('grunt-sftp-deploy');
 };
