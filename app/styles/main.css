@@ -8352,7 +8352,7 @@ body {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
-.site-wrapper {
+.cover-container {
   display: table;
   width: 100%;
   height: 100%;
@@ -8360,26 +8360,26 @@ body {
   -webkit-box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.5);
 }
-.site-wrapper-inner {
+.cover-container .inner-cover-container {
   display: table-cell;
   vertical-align: top;
 }
 @media (min-width: 768px) {
-  .site-wrapper-inner {
+  .cover-container .inner-cover-container {
     vertical-align: middle;
   }
 }
-.cover-container {
+.cover-container .text-container {
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
-  .cover-container {
+  .cover-container .text-container {
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  .cover-container {
+  .cover-container .text-container {
     width: 90%;
   }
 }
@@ -8402,24 +8402,24 @@ body {
     width: 90%;
   }
 }
-.masthead-brand {
+.masthead .brand {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: 'Engagement', cursive;
   font-size: 2em;
 }
 @media (min-width: 768px) {
-  .masthead-brand {
+  .masthead .brand {
     float: left;
   }
 }
-.masthead-nav > li {
+.masthead .masthead-nav > li {
   display: inline-block;
 }
-.masthead-nav > li + li {
+.masthead .masthead-nav > li + li {
   margin-left: 20px;
 }
-.masthead-nav > li > a {
+.masthead .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
   font-size: 1.1em;
@@ -8429,21 +8429,21 @@ body {
   color: rgba(255, 255, 255, 0.75);
   border-bottom: 2px solid transparent;
 }
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
+.masthead .masthead-nav > li > a:hover,
+.masthead .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #ffffff;
   /* IE8 proofing */
   border-bottom-color: rgba(255, 255, 255, 0.25);
 }
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
+.masthead .masthead-nav > .active > a,
+.masthead .masthead-nav > .active > a:hover,
+.masthead .masthead-nav > .active > a:focus {
   color: #ffffff;
   border-bottom-color: #ffffff;
 }
 @media (min-width: 768px) {
-  .masthead-nav {
+  .masthead .masthead-nav {
     float: right;
   }
 }

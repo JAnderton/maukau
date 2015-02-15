@@ -50,34 +50,34 @@ body {
 }
 
 // Wrappers
-.site-wrapper {
+.cover-container {
   display: table;
   width: @page-width;
   height: @page-height;
   min-height: @page-height;
   .Box-Shadow(100px);
-}
 
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
+  .inner-cover-container {
+    display: table-cell;
+    vertical-align: top;
 
-  @media (min-width: 768px) {
-    vertical-align: middle;
-  }
-}
-
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-  //  background: url("/images/cover1.jpg") no-repeat scroll 0px 100% / cover transparent;
-
-  @media (min-width: 768px) {
-    width: @page-width;
+    @media (min-width: 768px) {
+      vertical-align: middle;
+    }
   }
 
-  @media (min-width: 992px) {
-    width: @page-width - 10%;
+  .text-container {
+    margin-right: auto;
+    margin-left: auto;
+    //  background: url("/images/cover1.jpg") no-repeat scroll 0px 100% / cover transparent;
+
+    @media (min-width: 768px) {
+      width: @page-width;
+    }
+
+    @media (min-width: 992px) {
+      width: @page-width - 10%;
+    }
   }
 }
 
@@ -99,52 +99,52 @@ body {
   @media (min-width: 992px) {
     width: @page-width - 10%;
   }
-}
 
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: @cover-font;
-  font-size: @cover-font-size / 2.5;
+  .brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: @cover-font;
+    font-size: @cover-font-size / 2.5;
 
-  @media (min-width: 768px) {
-    float: left;
-  }
-}
-
-.masthead-nav {
-  & > li {
-    display: inline-block;
+    @media (min-width: 768px) {
+      float: left;
+    }
   }
 
-  & > li + li {
-    margin-left: 20px;
-  }
+  .masthead-nav {
+    & > li {
+      display: inline-block;
+    }
 
-  & > li > a {
-    padding-right: 0;
-    padding-left: 0;
-    font-size: @nav-link-font-size;
-    font-weight: bold;
-    .Property-Color(@app-text-color, 0.75);
-    border-bottom: 2px solid transparent;
-  }
+    & > li + li {
+      margin-left: 20px;
+    }
 
-  & > li > a:hover,
-  & > li > a:focus {
-    background-color: transparent;
-    .Property-Color(@app-text-color, 0.25, border-bottom-color);
-  }
+    & > li > a {
+      padding-right: 0;
+      padding-left: 0;
+      font-size: @nav-link-font-size;
+      font-weight: bold;
+      .Property-Color(@app-text-color, 0.75);
+      border-bottom: 2px solid transparent;
+    }
 
-  & > .active > a,
-  & > .active > a:hover,
-  & > .active > a:focus {
-    color: @app-text-color;
-    border-bottom-color: @app-text-color;
-  }
+    & > li > a:hover,
+    & > li > a:focus {
+      background-color: transparent;
+      .Property-Color(@app-text-color, 0.25, border-bottom-color);
+    }
 
-  @media (min-width: 768px) {
-    float: right;
+    & > .active > a,
+    & > .active > a:hover,
+    & > .active > a:focus {
+      color: @app-text-color;
+      border-bottom-color: @app-text-color;
+    }
+
+    @media (min-width: 768px) {
+      float: right;
+    }
   }
 }
 
