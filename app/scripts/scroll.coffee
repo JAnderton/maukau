@@ -5,7 +5,6 @@
 $('.scroll-link').on 'click', (event) ->
   event.preventDefault()
   sectionID = $(this).attr("href")
-  console.log "Link clicked " + sectionID
   scrollToID(sectionID, 750)
 
 scrollToID = (id, speed) ->
@@ -24,6 +23,12 @@ $(window).scroll ->
   if (windowScrollTopLocation >= scrollChangePoint)
     $(".cover-container").each ->
       if ($(this).position().top <= windowScrollTopLocation + scrollChangePoint)
+        activeElementId = $(this).attr('id')
         $(".nav-item.active").removeClass 'active'
-        $(".nav-item." + $(this).attr('id')).addClass 'active'
+
+        $(".nav-item").each ->
+          navItem = $(this)
+          $(this).children().each ->
+            if ($(this).attr("href") == "#" + activeElementId)
+              navItem.addClass 'active'
 .scroll()
