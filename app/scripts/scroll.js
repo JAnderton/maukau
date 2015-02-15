@@ -37,13 +37,14 @@
           activeElementId = $(this).attr('id');
           $(".nav-item.active").removeClass('active');
           return $(".nav-item").each(function() {
-            var navItem;
+            var navItem, possibleMatch, _ref;
             navItem = $(this);
-            return $(this).children().each(function() {
-              if ($(this).attr("href") === "#" + activeElementId) {
-                return navItem.addClass('active');
-              }
-            });
+            _ref = $(this).children().filter(function() {
+              return $(this).attr("href") === "#" + activeElementId;
+            }), possibleMatch = _ref[0];
+            if ((possibleMatch != null)) {
+              return navItem.addClass('active');
+            }
           });
         }
       });

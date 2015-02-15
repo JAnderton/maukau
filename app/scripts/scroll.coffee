@@ -28,7 +28,8 @@ $(window).scroll ->
 
         $(".nav-item").each ->
           navItem = $(this)
-          $(this).children().each ->
-            if ($(this).attr("href") == "#" + activeElementId)
-              navItem.addClass 'active'
+          [possibleMatch, ...] = $(this).children().filter ->
+            $(this).attr("href") == "#" + activeElementId
+          if (possibleMatch?)
+            navItem.addClass 'active'
 .scroll()
