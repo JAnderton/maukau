@@ -13,17 +13,12 @@
   });
 
   scrollToID = function(id, speed) {
-    var mainNav, offSet, targetOffset;
+    var offSet, targetOffset;
     offSet = 50;
     targetOffset = $(id).offset().top - offSet;
-    mainNav = $("main-nav");
-    $("html,body").animate({
+    return $("html,body").animate({
       scrollTop: targetOffset
     }, speed);
-    if (mainNav.hasClass("open")) {
-      mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-      return mainNav.removeClass("open");
-    }
   };
 
   $(window).scroll(function() {
