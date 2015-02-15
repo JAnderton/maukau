@@ -28,16 +28,16 @@
 <div class="cover-container" id="home">
   <div class="inner-cover-container">
     <div class="text-container">
-      <div class="masthead clearfix pad-top">
+      <div class="masthead clearfix pad-top" id="main-nav">
         <h3 class="brand">Mansi weds Karun</h3>
         <nav>
           <ul class="nav masthead-nav">
-            <li class="active"><a href="#home">Home</a></li>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">RSVP</a></li>
+            <li class="active"><a href="#home" class="scroll-link">Home</a></li>
+            <li><a href="#about-us" class="scroll-link">About Us</a></li>
+            <li><a href="#" class="scroll-link">Our Story</a></li>
+            <li><a href="#" class="scroll-link">Events</a></li>
+            <li><a href="#" class="scroll-link">Gallery</a></li>
+            <li><a href="#" class="scroll-link">RSVP</a></li>
           </ul>
         </nav>
       </div>
@@ -68,11 +68,14 @@
 
 <div class="cover-container" id="about-us">
   <div class="inner-cover-container">
-      About Us placeholder
+    About Us placeholder
   </div>
 </div>
 <!-- build:js scripts/main.js -->
-<script src="bower_components/jquery/jquery.js"/>
+<script src="bower_components/jquery/dist/jquery.min.js"/>
+<!--Migrate to require js-->
+<script src="scripts/main.js"></script>
+<script src="scripts/scroll.js"></script>
 <!-- endbuild -->
 </body>
 </html>
