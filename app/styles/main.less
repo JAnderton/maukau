@@ -17,7 +17,9 @@
 @page-background-color: #333;
 @top-padding: 20px;
 // 1%?
-@nav-link-font-size: 16px;
+@nav-link-font-size: 1.1em;
+@cover-font-size: 5em;
+@cover-font: 'Engagement', cursive;
 
 .Box-Shadow(@blur-distance, @left-offset: 0px, @right-offset: 0px, @shadow-color: rgba(0,0,0,0.5)) {
   -webkit-box-shadow: inset @left-offset @right-offset @blur-distance @shadow-color;
@@ -68,6 +70,7 @@ body {
 .cover-container {
   margin-right: auto;
   margin-left: auto;
+  //  background: url("/images/cover1.jpg") no-repeat scroll 0px 100% / cover transparent;
 
   @media (min-width: 768px) {
     width: @page-width;
@@ -101,6 +104,8 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: @cover-font;
+  font-size: @cover-font-size / 2.5;
 
   @media (min-width: 768px) {
     float: left;
@@ -121,7 +126,7 @@ body {
     padding-left: 0;
     font-size: @nav-link-font-size;
     font-weight: bold;
-    .Property-Color(@app-text-color, .75);
+    .Property-Color(@app-text-color, 0.75);
     border-bottom: 2px solid transparent;
   }
 
@@ -149,9 +154,24 @@ body {
 .cover {
   padding: 0 20px;
 
-  .btn-lg {
-    padding: 10px 20px;
+  span {
+    border: 0;
+    border-top: 1px solid #fff;
+    display: inline-block;
+    margin: 6px 10px;
+    width: 150px;
+  }
+
+  .cover-heading {
+    font-family: @cover-font;
+    font-size: @cover-font-size;
     font-weight: bold;
+  }
+
+  .lead {
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: @cover-font-size / 4;
   }
 }
 
