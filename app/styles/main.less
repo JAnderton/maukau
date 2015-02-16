@@ -3,7 +3,8 @@
 ***************************/
 @import "../bower_components/bootstrap/less/bootstrap.less";
 
-@icon-font-path: "../fonts/glyphicons/";
+//@import "../bower_components/bootstrap/less/glyphicons.less";
+//@icon-font-path: "../fonts/glyphicons/";
 
 @import "../bower_components/font-awesome/less/font-awesome.less";
 @fa-font-path: "../fonts/font-awesome";
@@ -81,14 +82,7 @@ body {
   }
 }
 
-/* Padding for spacing */
-.pad-top {
-  padding-top: @top-padding;
-}
-
-/*
- * Header
- */
+// Header
 .masthead {
   @media (min-width: 768px) {
     position: fixed;
@@ -148,13 +142,11 @@ body {
   }
 }
 
-/*
- * Cover
- */
+// Cover
 .cover {
   padding: 0 20px;
 
-  span {
+  .line {
     border: 0;
     border-top: 1px solid #fff;
     display: inline-block;
@@ -172,12 +164,16 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: @cover-font-size / 4;
+
+    .notes {
+      text-transform: none;
+      letter-spacing: normal;
+      font-size: @cover-font-size / 10;
+    }
   }
 }
 
-/*
- * Footer
- */
+// Footer
 .mastfoot {
   .Property-Color(@app-text-color, 0.5);
 
@@ -189,5 +185,28 @@ body {
 
   @media (min-width: 992px) {
     width: @page-width - 10%;
+  }
+}
+
+// Generic Styles
+.pad-top {
+  padding-top: @top-padding;
+}
+
+.social-icons {
+  @radius: 30px;
+
+  a {
+    color: @app-text-color;
+    border: 1px solid @app-text-color;
+    border-radius: 50%;
+    display: inline-block;
+    height: @radius;
+    line-height: @radius;
+    width: @radius;
+  }
+
+  a + a {
+    margin-left: 5px;
   }
 }

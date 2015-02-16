@@ -258,8 +258,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -8383,13 +8383,6 @@ body {
     width: 90%;
   }
 }
-/* Padding for spacing */
-.pad-top {
-  padding-top: 20px;
-}
-/*
- * Header
- */
 @media (min-width: 768px) {
   .masthead {
     position: fixed;
@@ -8447,13 +8440,10 @@ body {
     float: right;
   }
 }
-/*
- * Cover
- */
 .cover {
   padding: 0 20px;
 }
-.cover span {
+.cover .line {
   border: 0;
   border-top: 1px solid #fff;
   display: inline-block;
@@ -8470,9 +8460,11 @@ body {
   letter-spacing: 0.4em;
   font-size: 1.25em;
 }
-/*
- * Footer
- */
+.cover .lead .notes {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.5em;
+}
 .mastfoot {
   color: #ffffff;
   /* IE8 proofing */
@@ -8489,4 +8481,19 @@ body {
   .mastfoot {
     width: 90%;
   }
+}
+.pad-top {
+  padding-top: 20px;
+}
+.social-icons a {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+}
+.social-icons a + a {
+  margin-left: 5px;
 }
