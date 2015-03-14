@@ -75,7 +75,7 @@
       </div>
 
       <div class="col-lg-6">
-        <img src="images/mansi-profile-pic.png" class="img-circle" width="150"/>
+        <img src="img/mansi-profile-pic.png" class="img-circle" width="150"/>
 
         <p class="lead">
           The Bride
@@ -95,7 +95,7 @@
       <br/>
 
       <div class="col-lg-6">
-        <img src="images/karun-profile-pic.png" class="img-circle" width="150"/>
+        <img src="img/karun-profile-pic.png" class="img-circle" width="150"/>
 
         <p class="lead">
           The Groom
@@ -244,11 +244,36 @@
   </div>
 </div>
 <!-- build:js scripts/main.js -->
+<script>
+    var require = {
+        baseUrl: 'js/',
+        packages: [
+            {
+                name: 'cs',
+                location: 'bower_components/require-cs',
+                main: 'cs'
+            },
+            {
+                name: 'coffee-script',
+                location: 'bower_components/coffeescript',
+                main: 'extras/coffee-script'
+            }
+        ],
+        callback: function() {
+            console.log("require loaded");
+            //This function will be called when all the dependencies
+            //listed above in deps are loaded. Note that this
+            //function could be called before the page is loaded.
+            //This callback is optional.
+        }
+    };
+</script>
+
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <!--Migrate to require js-->
 <script src="js/scroll.js"></script>
-<!--<script src="js/readable-range.js"></script>-->
+<script src="js/readable-range.js"></script>
 <script src="js/time-diff.js"></script>
 <!-- endbuild -->
 </body>
