@@ -3,7 +3,7 @@
 
 (function() {
   'use strict';
-  var scrollToID;
+  var elementInScrollArea, hasMovedSignificantlyDownThePage, markElementActive, scrollToID;
 
   $('.scroll-link').on('click', function(event) {
     var sectionID;
@@ -21,28 +21,43 @@
     }, speed);
   };
 
+  markElementActive = function(element) {
+    $('.nav-item.active').removeClass('active');
+    return element.addClass('active');
+  };
+
+  hasMovedSignificantlyDownThePage = function(windowScrollTopLocation, scrollChangePoint) {
+    return windowScrollTopLocation >= scrollChangePoint;
+  };
+
+  elementInScrollArea = function(element, windowScrollTopLocation, scrollChangePoint) {
+    return element.position().top <= windowScrollTopLocation + scrollChangePoint;
+  };
+
   $(window).scroll(function() {
     var scrollChangePoint, windowScrollTopLocation;
     windowScrollTopLocation = $(window).scrollTop();
     scrollChangePoint = $(window).height() / 10 * 4;
-    if (windowScrollTopLocation >= scrollChangePoint) {
+    if (hasMovedSignificantlyDownThePage(windowScrollTopLocation, scrollChangePoint)) {
       return $(".cover-container").each(function() {
-        var activeElementId;
-        if ($(this).position().top <= windowScrollTopLocation + scrollChangePoint) {
-          activeElementId = $(this).attr('id');
-          $(".nav-item.active").removeClass('active');
+        var activeElementId, containerElement;
+        containerElement = $(this);
+        if (elementInScrollArea(containerElement, windowScrollTopLocation, scrollChangePoint)) {
+          activeElementId = containerElement.attr('id');
           return $(".nav-item").each(function() {
             var navItem, possibleMatch, _ref;
             navItem = $(this);
-            _ref = $(this).children().filter(function() {
+            _ref = navItem.children().filter(function() {
               return $(this).attr("href") === "#" + activeElementId;
             }), possibleMatch = _ref[0];
             if ((possibleMatch != null)) {
-              return navItem.addClass('active');
+              return markElementActive(navItem);
             }
           });
         }
       });
+    } else {
+      return markElementActive($("#homeLink"));
     }
   }).scroll();
 
