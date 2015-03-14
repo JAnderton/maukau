@@ -8581,9 +8581,9 @@ body {
 .masthead .masthead-nav > li > a:hover,
 .masthead .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #ffffff;
+  color: #ffffff;
   /* IE8 proofing */
-  border-bottom-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.25);
 }
 .masthead .masthead-nav > .active > a,
 .masthead .masthead-nav > .active > a:hover,

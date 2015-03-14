@@ -30,8 +30,8 @@
 }
 
 .Property-Color(@color: @app-text-color, @alpha: 1, @property: color) {
-  @{property}: @color; /* IE8 proofing */
-  @{property}: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+  color: @color; /* IE8 proofing */
+  color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
 }
 
 /***************************
