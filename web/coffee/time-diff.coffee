@@ -1,0 +1,7 @@
+### jshint white:false ###
+
+'use strict'
+
+meet_date = '2010-03-27 11:30:00.000+0530'
+
+$('#met-time-diff').text moment.preciseDiff(moment(meet_date))

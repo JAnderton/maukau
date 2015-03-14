@@ -24,7 +24,7 @@ Thumbs.db
 node_modules
 dist
 .tmp
-app/bower_components
+web/bower_components
 
 # Deployment files
 .deploy-config.json
